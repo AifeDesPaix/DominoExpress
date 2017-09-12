@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.3.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.3.xsd http://nifty-gui.sourceforge.net/nifty-1.3.xsd">
+  <useStyles filename="nifty-default-styles.xml" />
+  <useControls filename="nifty-default-controls.xml" />
+  <screen id="start"  controller="dominoExpress.editorGUI">
+    <layer id="foreground" childLayout="vertical">
+        <panel id="panel_bt_1" height="5%" width="20%" align="right" valign="bottom" childLayout="center" backgroundColor="#2222">
+            <control name="button" label="Quitter "id="Quitter" align="center" valign="bottom" visibleToMouse="true"> 
+                <interact onClick="quitGame()"/>
+            </control>
+        </panel>
+        <panel id="panel_bt_2" height="5%" width="20%" align="right" valign="bottom" childLayout="center" backgroundColor="#2222">
+            <control name="button" label="Ajouter une ligne" id="addLine" align="center" valign="bottom" visibleToMouse="true"> 
+                <interact onClick="addLine()"/>
+            </control>
+        </panel>
+        <panel id="panel_bt_2" height="5%" width="20%" align="right" valign="bottom" childLayout="center" backgroundColor="#2222">
+            <control name="button" label="Ajouter une courbe" id="addLine" align="center" valign="bottom" visibleToMouse="true"> 
+                <interact onClick="addCurve()"/>
+            </control>
+        </panel>
+        <panel id="panel_bt_2" height="5%" width="20%" align="right" valign="bottom" childLayout="center" backgroundColor="#2222">
+            <control name="button" label="Départ" id="addLine" align="center" valign="bottom" visibleToMouse="true"> 
+                <interact onClick="addPush()"/>
+            </control>
+        </panel>
+           <panel id="panel_bt_2" height="5%" width="20%" align="right" valign="bottom" childLayout="center" backgroundColor="#2222">
+            <control name="button" label="Supprimer" id="addLine" align="center" valign="bottom" visibleToMouse="true"> 
+                <interact onClick="delete()"/>
+            </control>
+        </panel>
+         <panel id="panel_bt_2" height="5%" width="20%" align="right" valign="bottom" childLayout="center" backgroundColor="#2222">
+            <control
+                id="input"
+                name="textfield">
+            </control>
+        </panel>
+        <panel id="panel_bt_2" height="5%" width="20%" align="right" valign="bottom" childLayout="center" backgroundColor="#2222">
+            <control name="button" label="Valider" id="validCount()" align="center" valign="bottom" visibleToMouse="true"> 
+                <interact onClick="validCount()"/>
+            </control>
+        </panel>
+         <panel id="panel_bt_2" height="5%" width="20%" align="right" valign="bottom" childLayout="center" backgroundColor="#2222">
+            <control name="button" label="Rotation" id="rotate()" align="center" valign="bottom" visibleToMouse="true"> 
+                <interact onClick="rotate()"/>
+            </control>
+        </panel>
+    </layer>
+  </screen>
+</nifty>
