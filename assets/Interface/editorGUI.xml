@@ -1,52 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.3.xsd"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.3.xsd http://nifty-gui.sourceforge.net/nifty-1.3.xsd">
   <useStyles filename="nifty-default-styles.xml" />
   <useControls filename="nifty-default-controls.xml" />
-  <screen id="start"  controller="dominoExpress.editorGUI">
-    <layer id="foreground" childLayout="vertical">
-        <panel id="panel_bt_1" height="5%" width="20%" align="right" valign="bottom" childLayout="center" backgroundColor="#2222">
-            <control name="button" label="Quitter "id="Quitter" align="center" valign="bottom" visibleToMouse="true"> 
+  <screen id="start"  controller="dominoExpress.EditorGUI">
+     
+      <layer id="foreground" childLayout="horizontal" >  
+          <panel id="panel_bt__menu_1"  width="85%" height="12px" align="left" valign="top" childLayout="horizontal" backgroundColor="#0000">
+           
+              <control    style="nifty-button" name="button" label="Charger" id="load"  align="left" valign="center" visibleToMouse="false" backgroundColor="#0000"> 
+                 <interact onClick="load()"/>
+            </control>
+           
+            <control   style="nifty-button" name="button" label="Sauvegarder" id="save"  align="left" valign="center" visibleToMouse="false"> 
+                 <interact onClick="save()"/>
+            </control>
+             
+            <control   style="nifty-button" name="button" label="Imprimer" id="print" align="left" valign="center" visibleToMouse="true"> 
+                 <interact onClick="print()"/>
+            </control>
+               
+            <control   style="nifty-button" name="button" label="Nouveau" id="new" align="left" valign="center" visibleToMouse="true"> 
+                 <interact onClick="newS()"/>
+            </control>
+              
+            <control   style="nifty-button" name="button" label="Quitter "id="Quitter" align="left" valign="center" visibleToMouse="true"> 
                 <interact onClick="quitGame()"/>
             </control>
-        </panel>
-        <panel id="panel_bt_2" height="5%" width="20%" align="right" valign="bottom" childLayout="center" backgroundColor="#2222">
-            <control name="button" label="Ajouter une ligne" id="addLine" align="center" valign="bottom" visibleToMouse="true"> 
-                <interact onClick="addLine()"/>
+            <control    style="nifty-button" name="button" label="Aide" id="help"  align="left" valign="center" visibleToMouse="true" backgroundColor="#0000"> 
+                   <interact onClick="help()"/>
             </control>
-        </panel>
-        <panel id="panel_bt_2" height="5%" width="20%" align="right" valign="bottom" childLayout="center" backgroundColor="#2222">
-            <control name="button" label="Ajouter une courbe" id="addLine" align="center" valign="bottom" visibleToMouse="true"> 
-                <interact onClick="addCurve()"/>
+            
+        </panel>    
+
+        <panel id="panel_bt_6"   align="right" valign="top" height="50%" childLayout="vertical" backgroundColor="#0000">
+            <control   style="nifty-button" name="button" label="A à B" id="aToB" align="center" valign="bottom" visibleToMouse="true"> 
+                <interact onClick="aToB()"/>
             </control>
-        </panel>
-        <panel id="panel_bt_2" height="5%" width="20%" align="right" valign="bottom" childLayout="center" backgroundColor="#2222">
-            <control name="button" label="Départ" id="addLine" align="center" valign="bottom" visibleToMouse="true"> 
-                <interact onClick="addPush()"/>
+
+            <control   style="nifty-button" name="button" label="Spirale" id="Spiral" align="center" valign="bottom" visibleToMouse="true"> 
+                <interact onClick="spiral()"/>
             </control>
-        </panel>
-           <panel id="panel_bt_2" height="5%" width="20%" align="right" valign="bottom" childLayout="center" backgroundColor="#2222">
-            <control name="button" label="Supprimer" id="addLine" align="center" valign="bottom" visibleToMouse="true"> 
-                <interact onClick="delete()"/>
+        
+            <control   style="nifty-button" name="button" label="Départ" id="depart" align="center" valign="bottom" visibleToMouse="true"> 
+                 <interact onClick="depart()"/>
             </control>
-        </panel>
-         <panel id="panel_bt_2" height="5%" width="20%" align="right" valign="bottom" childLayout="center" backgroundColor="#2222">
+         
             <control
-                id="input"
+                id="input_size"
                 name="textfield">
             </control>
-        </panel>
-        <panel id="panel_bt_2" height="5%" width="20%" align="right" valign="bottom" childLayout="center" backgroundColor="#2222">
-            <control name="button" label="Valider" id="validCount()" align="center" valign="bottom" visibleToMouse="true"> 
-                <interact onClick="validCount()"/>
+         
+            <control   style="nifty-button" name="button" label="Supprimer" id="delete" align="center" valign="bottom" visibleToMouse="true"> 
+                <interact onClick="delete()"/>
             </control>
-        </panel>
-         <panel id="panel_bt_2" height="5%" width="20%" align="right" valign="bottom" childLayout="center" backgroundColor="#2222">
-            <control name="button" label="Rotation" id="rotate()" align="center" valign="bottom" visibleToMouse="true"> 
-                <interact onClick="rotate()"/>
+        
+            <control   style="nifty-button" name="button" label="Pause" id="stop" align="center" valign="bottom" visibleToMouse="false"> 
+                <interact onClick="pause()"/>
             </control>
-        </panel>
-    </layer>
+            
+            <control   style="nifty-button" name="button" label="Réinitialiser" id="reload" align="center" valign="bottom" visibleToMouse="false"> 
+                <interact onClick="reset()"/>
+            </control>
+            
+            <control   style="nifty-button" name="button" label="Prédefini" id="predef" align="center" valign="bottom" visibleToMouse="false"> 
+                <interact onClick="predef()"/>
+            </control>
+            <control   style="nifty-button" name="button" label="Sélection" id="selection" align="center" valign="bottom" visibleToMouse="false"> 
+                <interact onClick="selection()"/>
+            </control>
+            
+          </panel>
+
+      </layer>
+     
   </screen>
+
 </nifty>
